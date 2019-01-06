@@ -1,0 +1,25 @@
+<h1>Hi there!</h1>
+
+<p>Im Dino, welcome on my side.</p>
+
+<button (click)="msg()">Click me</button>
+
+<div (click)="changeColor()" [ngClass]="{
+  'red' : isRed,
+  'green' : !isRed
+}" >{{text}}</div>
+
+<!--one way data binding-->
+Your name: <input type="text" [value]="nameX">
+<p>Your name is: {{nameX}}</p>
+
+<!--two way data binding-->
+Your name: <input *ngIf="display" type="text" [(ngModel)]="name">
+<p *ngIf="display">Your name is: {{name}}</p>
+
+<p *ngIf="!display">Hided!</p>
+<hr>
+<ul>
+  <li *ngFor="let number of numbers">{{number}}</li>
+</ul>
+

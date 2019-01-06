@@ -1,0 +1,22 @@
+<!--[] means attribute binding-->
+<!--adding .gray class as class atr. if 'h1Style' == true-->
+<!--<h1 [class.gray]="h1Style">Home</h1>-->
+
+
+<!--ngClass same like [class.gray] but as object-->
+<h1 [ngClass]="{
+  'gray': h1Style,
+  'large': !h1Style
+}">Home</h1>
+
+<ul *ngIf="users">
+  <li *ngFor="let user of users.data">
+    <img [src]="user.avatar">
+    <p>{{ user.first_name }} {{ user.last_name }}</p>
+  </li>
+  </ul>
+
+<button (click)="black()" [ngClass]="{
+  'black' : blackPls
+}">Click me</button>
+
